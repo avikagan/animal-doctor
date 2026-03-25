@@ -1,0 +1,44 @@
+import { showScreen, clearElement } from '../utils/dom.js';
+import { getState } from '../state.js';
+import { getAnimalById } from '../data/animals.js';
+import { MatchPairsGame } from '../minigames/matchPairs.js';
+import { MatchThreeGame } from '../minigames/matchThree.js';
+import { DragDropGame } from '../minigames/dragDrop.js';
+
+let activeGame = null;
+
+export function render() {
+  const screen = showScreen('minigame');
+  clearElement(screen);
+
+  const state = getState();
+  const animal = getAnimalById(state.selectedAnimal);
+  if (!animal) return;
+
+  // Destroy previous game if any
+  if (activeGame) {
+    activeGame.destroy();
+    activeGame = null;
+  }
+
+  const gameMap = {
+    matchPairs: MatchPairsGame,
+    matchThree: MatchThreeGame,
+    dragDrop: DragDropGame
+  };
+
+  const GameClass = gameMap[animal.minigameType];
+  if (!GameClass) {
+    screen.textContent = 'Unknown game type!';
+    return;
+  }
+
+  activeGame = new GameClass(screen, animal.minigameConfig, animal);
+  activeGame.onComplete = (results) => {
+    activeGame.destroy();
+    activeGame = null;
+    import('./results.js').then(m => m.render(results));
+  };
+  activeGame.init();
+  activeGame.start();
+}

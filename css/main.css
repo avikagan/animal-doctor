@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+  --color-bg: #f0f7e6;
+  --color-bg-dark: #d4e6c3;
+  --color-primary: #4caf50;
+  --color-primary-dark: #388e3c;
+  --color-danger: #e57373;
+  --color-accent: #ffb74d;
+  --color-info: #64b5f6;
+  --color-text: #2e3d1f;
+  --color-text-light: #5a6b4a;
+  --color-white: #ffffff;
+  --color-card: #ffffff;
+  --color-card-shadow: rgba(0, 0, 0, 0.1);
+
+  --color-cr: #d32f2f;
+  --color-en: #f57c00;
+  --color-vu: #fbc02d;
+  --color-nt: #8bc34a;
+  --color-lc: #4caf50;
+
+  --font-main: 'Fredoka One', 'Comic Sans MS', cursive;
+  --font-body: 'Nunito', 'Arial Rounded MT Bold', sans-serif;
+
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  position: relative;
+}
+
+.screen {
+  display: none;
+  width: 100%;
+  animation: fadeIn 0.3s ease;
+}
+
+.screen.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2, h3 {
+  font-family: var(--font-main);
+  color: var(--color-text);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.3rem; }
+
+.btn {
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  padding: 12px 28px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: var(--shadow);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background: var(--color-white);
+  color: var(--color-text);
+  border: 2px solid var(--color-bg-dark);
+}
+
+.btn-accent {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+
+.btn-large {
+  font-size: 1.4rem;
+  padding: 16px 40px;
+  border-radius: var(--radius-lg);
+}
+
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.badge-cr { background: var(--color-cr); }
+.badge-en { background: var(--color-en); }
+.badge-vu { background: var(--color-vu); color: var(--color-text); }
+.badge-nt { background: var(--color-nt); }
+.badge-lc { background: var(--color-lc); }
+
+.emoji-large {
+  font-size: 80px;
+  line-height: 1;
+}
+
+.emoji-medium {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.text-center { text-align: center; }
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.gap-1 { gap: 8px; }
+.gap-2 { gap: 16px; }
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+.total-score {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--color-accent);
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 600px) {
+  #app { padding: 12px; }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+  .emoji-large { font-size: 60px; }
+  .btn-large { font-size: 1.1rem; padding: 12px 28px; }
+}
