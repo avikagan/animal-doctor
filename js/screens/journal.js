@@ -1,4 +1,4 @@
-import { el, showScreen, clearElement } from '../utils/dom.js';
+import { el, showScreen, clearElement, animalImg } from '../utils/dom.js';
 import { getState } from '../state.js';
 import { ANIMALS, getAnimalById, getConservationInfo } from '../data/animals.js';
 
@@ -32,7 +32,7 @@ export function render() {
           className: `card journal-entry ${unlocked ? '' : 'locked'}`,
           onClick: unlocked ? () => renderDetail(animal.id) : null
         }, [
-          el('span', { className: 'entry-emoji' }, [animal.emoji]),
+          animalImg(animal, 'default', 'emoji-medium'),
           el('div', { className: 'entry-info' }, [
             el('div', { className: 'entry-name' }, [unlocked ? animal.name : '???']),
             unlocked
@@ -93,7 +93,7 @@ export function renderDetail(animalId) {
 
     // Header card
     container.appendChild(el('div', { className: 'journal-detail-header' }, [
-      el('span', { className: 'emoji-large' }, [animal.emoji]),
+      animalImg(animal, 'default', 'emoji-large'),
       el('h2', {}, [animal.name]),
       el('p', { style: 'font-style: italic; color: var(--color-text-light); margin-top: 4px;' }, [animal.species]),
       el('div', { className: 'mt-1' }, [

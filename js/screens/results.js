@@ -1,4 +1,4 @@
-import { el, showScreen, clearElement } from '../utils/dom.js';
+import { el, showScreen, clearElement, animalImg } from '../utils/dom.js';
 import { getState, updateJournal, updateHighScore } from '../state.js';
 import { getAnimalById, getConservationInfo } from '../data/animals.js';
 import { calculateScore } from '../systems/scoring.js';
@@ -40,7 +40,7 @@ export function render(gameResults) {
   const container = el('div', { className: 'text-center' }, [
     // Healed animal
     el('div', { className: 'mt-2 mb-2' }, [
-      el('div', { className: 'emoji-large anim-heal', style: 'display: inline-block;' }, [animal.emoji]),
+      animalImg(animal, 'default', 'emoji-large'),
       el('h2', { className: 'mt-1 anim-pop-in' }, [
         gameResults.timeRemaining > 0 ? `${animal.name} feels better!` : 'Time\'s up!'
       ]),

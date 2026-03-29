@@ -1,4 +1,4 @@
-import { el, showScreen, clearElement } from '../utils/dom.js';
+import { el, showScreen, clearElement, animalImg } from '../utils/dom.js';
 import { getState, setState } from '../state.js';
 import { ANIMALS, getConservationInfo } from '../data/animals.js';
 
@@ -33,7 +33,7 @@ export function render() {
         import('./diagnosis.js').then(m => m.render());
       }
     }, [
-      el('span', { className: 'emoji-large' }, [animal.emoji]),
+      animalImg(animal, 'default', 'emoji-large'),
       el('div', { className: 'animal-name' }, [animal.name]),
       el('div', { className: 'animal-species' }, [animal.species]),
       el('span', {

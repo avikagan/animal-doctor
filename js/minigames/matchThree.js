@@ -1,4 +1,4 @@
-import { el, clearElement } from '../utils/dom.js';
+import { el, clearElement, animalImg } from '../utils/dom.js';
 import { Timer } from '../systems/timer.js';
 
 const TILE_TYPES = [
@@ -43,7 +43,7 @@ export class MatchThreeGame {
     // Header
     const header = el('div', { className: 'game-header' }, [
       el('div', { className: 'animal-info' }, [
-        el('span', { style: 'font-size: 24px;' }, [this.animal.emoji]),
+        animalImg(this.animal, 'default', 'emoji-medium'),
         el('span', { style: 'font-family: var(--font-main); font-size: 0.9rem;' }, [this.animal.name])
       ]),
       el('div', { className: 'timer' }, ['\u23F0 --']),

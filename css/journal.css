@@ -146,7 +146,7 @@
 }
 
 .threat-list li::before {
-  content: '\u26A0\uFE0F';
+  content: '\26A0\FE0F';
   position: absolute;
   left: 0;
 }

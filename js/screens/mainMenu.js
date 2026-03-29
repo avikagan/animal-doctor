@@ -1,4 +1,4 @@
-import { el, showScreen, clearElement } from '../utils/dom.js';
+import { el, showScreen, clearElement, animalImg } from '../utils/dom.js';
 import { getState } from '../state.js';
 import { ANIMALS } from '../data/animals.js';
 
@@ -41,8 +41,12 @@ export function render() {
       ])
     ]),
     el('div', { className: 'mt-3' }, [
-      el('div', { style: 'font-size: 36px; display: flex; justify-content: center; gap: 8px;' },
-        ANIMALS.map(a => el('span', { className: 'anim-float', style: `animation-delay: ${Math.random() * 2}s;` }, [a.emoji]))
+      el('div', { style: 'display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;' },
+        ANIMALS.map(a => {
+          const wrapper = el('div', { className: 'anim-float', style: `animation-delay: ${Math.random() * 2}s;` });
+          wrapper.appendChild(animalImg(a, 'default', 'emoji-medium'));
+          return wrapper;
+        })
       )
     ])
   ]);
