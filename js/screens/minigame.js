@@ -4,11 +4,15 @@ import { getAnimalById } from '../data/animals.js';
 import { MatchPairsGame } from '../minigames/matchPairs.js';
 import { MatchThreeGame } from '../minigames/matchThree.js';
 import { DragDropGame } from '../minigames/dragDrop.js';
+import { GermZapperGame } from '../minigames/germZapper.js';
+import { SimonSaysGame } from '../minigames/simonSays.js';
 
 const GAME_CLASSES = {
   matchPairs: MatchPairsGame,
   matchThree: MatchThreeGame,
-  dragDrop: DragDropGame
+  dragDrop: DragDropGame,
+  germZapper: GermZapperGame,
+  simonSays: SimonSaysGame
 };
 
 let activeGame = null;

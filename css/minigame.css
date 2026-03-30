@@ -282,6 +282,115 @@
   color: var(--color-text-light);
 }
 
+/* Germ Zapper */
+.zapper-grid {
+  display: grid;
+  gap: 6px;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.zapper-cell {
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  background: var(--color-white);
+  border: 2px solid var(--color-bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  user-select: none;
+  min-height: 60px;
+}
+
+.zapper-cell:hover {
+  background: #f5f5f5;
+}
+
+.zapper-cell.zapped {
+  background: #e8f5e9;
+  border-color: var(--color-primary);
+  animation: zapPop 0.3s ease;
+}
+
+.zapper-cell.miss {
+  background: #ffebee;
+  border-color: var(--color-danger);
+}
+
+.zapper-germ {
+  font-size: 2rem;
+  animation: germAppear 0.3s ease;
+  display: block;
+}
+
+@keyframes germAppear {
+  from { transform: scale(0) rotate(-180deg); opacity: 0; }
+  to { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+@keyframes zapPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Simon Says */
+.simon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 0 auto;
+  max-width: 340px;
+}
+
+.simon-btn {
+  border-radius: var(--radius-lg);
+  background: var(--btn-color, #ccc);
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: transform 0.15s, filter 0.15s, box-shadow 0.15s;
+  user-select: none;
+  opacity: 0.7;
+}
+
+.simon-btn:hover {
+  opacity: 0.85;
+}
+
+.simon-btn.active {
+  opacity: 1;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--btn-color, #ccc);
+  filter: brightness(1.2);
+}
+
+.simon-btn.pressed {
+  opacity: 1;
+  transform: scale(0.95);
+  filter: brightness(1.1);
+}
+
+.simon-btn.wrong {
+  animation: shake 0.4s ease;
+  filter: brightness(0.6);
+}
+
+.simon-btn-label {
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  color: rgba(0,0,0,0.6);
+}
+
+.simon-status {
+  min-height: 1.4em;
+}
+
 /* Game over overlay */
 .game-overlay {
   position: fixed;
@@ -329,5 +438,10 @@
   .match3-grid { gap: 3px; max-width: 100%; }
   .match3-tile { font-size: 1.2rem; }
   .dragdrop-container { flex-direction: column; }
+  .zapper-grid { gap: 4px; max-width: 100%; }
+  .zapper-cell { min-height: 50px; }
+  .zapper-germ { font-size: 1.6rem; }
+  .simon-grid { max-width: 100%; gap: 8px; }
+  .simon-btn { padding: 16px 8px; }
   .game-header { flex-wrap: wrap; gap: 8px; }
 }
