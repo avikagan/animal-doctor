@@ -13,7 +13,7 @@ export function render() {
   const conservation = getConservationInfo(animal.conservationStatus);
 
   // Hero image — full width, dominant element
-  const heroImg = animalImg(animal, 'default', 'emoji-large');
+  const heroImg = animalImg(animal, 'sick', 'emoji-large');
   heroImg.className = 'diagnosis-hero-img';
 
   const container = el('div', { className: 'diagnosis-screen' }, [
@@ -59,7 +59,7 @@ export function render() {
           }
         }, ['\u{1F48A} Begin Treatment!']),
         el('p', { className: 'mt-1', style: 'font-size: 0.85rem; color: var(--color-text-light);' }, [
-          `${getMinigameLabel(animal.minigameType)} \u2022 ${getTimeLimit(animal)}s \u2022 ${conservation.multiplier}x multiplier`
+          `${conservation.multiplier}x score multiplier`
         ])
       ])
     ])
@@ -68,15 +68,3 @@ export function render() {
   screen.appendChild(container);
 }
 
-function getMinigameLabel(type) {
-  const labels = {
-    matchPairs: 'Memory Match',
-    matchThree: 'Match-3 Puzzle',
-    dragDrop: 'Drag & Drop'
-  };
-  return labels[type] || type;
-}
-
-function getTimeLimit(animal) {
-  return animal.minigameConfig.timeLimit;
-}

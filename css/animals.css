@@ -10,6 +10,12 @@
   height: auto;
 }
 
+.animal-img.emoji-hero {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+}
+
 .animal-img.emoji-medium {
   width: 64px;
   height: 64px;
@@ -75,7 +81,7 @@
 }
 
 .animal-card.healed::after {
-  content: '\u2705';
+  content: '\2705';
   position: absolute;
   top: 8px;
   right: 8px;

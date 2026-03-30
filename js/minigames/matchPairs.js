@@ -49,7 +49,7 @@ export class MatchPairsGame {
     // Game header
     const header = el('div', { className: 'game-header' }, [
       el('div', { className: 'animal-info' }, [
-        animalImg(this.animal, 'default', 'emoji-medium'),
+        animalImg(this.animal, 'sick', 'emoji-medium'),
         el('span', { style: 'font-family: var(--font-main); font-size: 0.9rem;' }, [this.animal.name])
       ]),
       el('div', { className: 'timer' }, ['\u23F0 --']),

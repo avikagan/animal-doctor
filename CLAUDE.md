@@ -88,16 +88,18 @@ assets/
 - CSS emoji: use CSS escape syntax (`\26A0`) not JS syntax (`\u26A0`) in `content:` properties
 
 ## Animals (5 total)
-| ID | Name | IUCN Status | Multiplier | Difficulty | Mini-game |
-|----|------|-------------|-----------|-----------|-----------|
-| honeybee | Bella the Honeybee | Near Threatened | 1.25x | 1 (easiest) | Memory Match |
-| panda | Ping the Giant Panda | Vulnerable | 1.5x | 2 | Match-3 |
-| seaTurtle | Shelly the Sea Turtle | Endangered | 2.0x | 3 | Drag & Drop |
-| snowLeopard | Storm the Snow Leopard | Vulnerable | 1.5x | 4 | Memory Match (harder) |
-| axolotl | Axel the Axolotl | Critically Endangered | 3.0x | 5 (hardest) | Match-3 (harder) |
+| ID | Name | IUCN Status | Multiplier | Difficulty |
+|----|------|-------------|-----------|-----------|
+| honeybee | Bella the Honeybee | Near Threatened | 1.25x | 1 (easiest) |
+| panda | Ping the Giant Panda | Vulnerable | 1.5x | 2 |
+| seaTurtle | Shelly the Sea Turtle | Endangered | 2.0x | 3 |
+| snowLeopard | Storm the Snow Leopard | Vulnerable | 1.5x | 4 |
+| axolotl | Axel the Axolotl | Critically Endangered | 3.0x | 5 (hardest) |
+
+Mini-game type is randomly selected each playthrough. Each animal has difficulty-tuned configs for all three game types (`minigameConfigs` in `animals.js`).
 
 ## Adding a New Animal
-1. Add an entry to the `ANIMALS` array in `js/data/animals.js` with: id, name, species, emoji, conservationStatus, difficulty, ailment (with symptoms + treatments), minigameType, minigameConfig, and journal facts
+1. Add an entry to the `ANIMALS` array in `js/data/animals.js` with: id, name, species, emoji, conservationStatus, difficulty, ailment (with symptoms, treatments, symptomTreatmentPairs, and wrongTreatments), minigameConfigs (for all three game types), and journal facts
 2. Create `assets/images/{id}/default.png` (and optionally sick.gif, healthy.gif)
 3. The animal will automatically appear in the selection screen and journal
 

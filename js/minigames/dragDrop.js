@@ -31,7 +31,7 @@ export class DragDropGame {
 
     const header = el('div', { className: 'game-header' }, [
       el('div', { className: 'animal-info' }, [
-        animalImg(this.animal, 'default', 'emoji-medium'),
+        animalImg(this.animal, 'sick', 'emoji-medium'),
         el('span', { style: 'font-family: var(--font-main); font-size: 0.9rem;' }, [this.animal.name])
       ]),
       el('div', { className: 'timer' }, ['\u23F0 --']),
@@ -78,15 +78,13 @@ export class DragDropGame {
 
     const itemCount = Math.min(2 + this.currentRound, this.config.itemsPerRound || 4);
 
-    // Pick symptoms and matching treatments
-    const symptoms = this.animal.ailment.symptoms.slice(0, itemCount);
-    const correct = this.animal.ailment.correctTreatments.slice(0, itemCount);
-    const wrong = this.animal.ailment.wrongTreatments.slice(0, Math.max(1, itemCount - 2));
+    // Use explicit symptom-treatment pairs if available, otherwise fall back to index matching
+    const pairs = this.animal.ailment.symptomTreatmentPairs;
+    const shuffledPairs = shuffle([...pairs]);
+    const roundPairs = shuffledPairs.slice(0, itemCount);
+    const wrong = shuffle([...this.animal.ailment.wrongTreatments]).slice(0, Math.max(1, itemCount - 2));
 
-    const pairings = symptoms.map((s, i) => ({
-      symptom: s,
-      treatment: correct[i] || correct[0]
-    }));
+    const pairings = roundPairs;
 
     const allTreatments = shuffle([
       ...pairings.map(p => ({ text: p.treatment, correct: true, forSymptom: p.symptom })),

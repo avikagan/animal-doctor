@@ -40,7 +40,7 @@ export function render(gameResults) {
   const container = el('div', { className: 'text-center' }, [
     // Healed animal
     el('div', { className: 'mt-2 mb-2' }, [
-      animalImg(animal, 'default', 'emoji-large'),
+      animalImg(animal, gameResults.timeRemaining > 0 ? 'healthy' : 'sick', gameResults.timeRemaining > 0 ? 'emoji-hero' : 'emoji-large'),
       el('h2', { className: 'mt-1 anim-pop-in' }, [
         gameResults.timeRemaining > 0 ? `${animal.name} feels better!` : 'Time\'s up!'
       ]),

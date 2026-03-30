@@ -5,6 +5,12 @@ import { MatchPairsGame } from '../minigames/matchPairs.js';
 import { MatchThreeGame } from '../minigames/matchThree.js';
 import { DragDropGame } from '../minigames/dragDrop.js';
 
+const GAME_CLASSES = {
+  matchPairs: MatchPairsGame,
+  matchThree: MatchThreeGame,
+  dragDrop: DragDropGame
+};
+
 let activeGame = null;
 
 export function render() {
@@ -21,19 +27,18 @@ export function render() {
     activeGame = null;
   }
 
-  const gameMap = {
-    matchPairs: MatchPairsGame,
-    matchThree: MatchThreeGame,
-    dragDrop: DragDropGame
-  };
+  // Randomly pick a game type from available configs
+  const availableTypes = Object.keys(animal.minigameConfigs);
+  const gameType = availableTypes[Math.floor(Math.random() * availableTypes.length)];
+  const config = animal.minigameConfigs[gameType];
 
-  const GameClass = gameMap[animal.minigameType];
+  const GameClass = GAME_CLASSES[gameType];
   if (!GameClass) {
     screen.textContent = 'Unknown game type!';
     return;
   }
 
-  activeGame = new GameClass(screen, animal.minigameConfig, animal);
+  activeGame = new GameClass(screen, config, animal);
   activeGame.onComplete = (results) => {
     activeGame.destroy();
     activeGame = null;

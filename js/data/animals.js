@@ -19,12 +19,20 @@ export const ANIMALS = [
       description: 'Bella has been flying too long and her wings are weak! She needs your help to recover.',
       symptoms: ['Drooping wings', 'Slow buzzing', "Can't lift pollen"],
       correctTreatments: ['Nectar energy drink', 'Wing rest wrap', 'Flower pollen vitamins', 'Honey boost', 'Royal jelly drops', 'Sunflower extract'],
-      wrongTreatments: ['Ice bath', 'Loud music', 'Spicy peppers', 'Rubber gloves', 'Battery acid', 'Motor oil']
+      wrongTreatments: ['Ice bath', 'Loud music', 'Spicy peppers', 'Rubber gloves', 'Battery acid', 'Motor oil'],
+      symptomTreatmentPairs: [
+        { symptom: 'Drooping wings', treatment: 'Wing rest wrap' },
+        { symptom: 'Slow buzzing', treatment: 'Nectar energy drink' },
+        { symptom: "Can't lift pollen", treatment: 'Flower pollen vitamins' },
+        { symptom: 'Low energy', treatment: 'Honey boost' },
+        { symptom: 'Dry wings', treatment: 'Royal jelly drops' },
+        { symptom: 'Weak antennae', treatment: 'Sunflower extract' }
+      ]
     },
-    minigameType: 'matchPairs',
-    minigameConfig: {
-      pairs: 6,
-      timeLimit: 60
+    minigameConfigs: {
+      matchPairs: { pairs: 6, timeLimit: 60 },
+      matchThree: { gridSize: 6, timeLimit: 90, targetScore: 400, tileTypes: 5 },
+      dragDrop: { rounds: 4, timeLimit: 75, itemsPerRound: 4 }
     },
     journal: {
       habitat: 'Found on every continent except Antarctica. They live in hives in hollow trees, rock crevices, and man-made beehives. A single hive can contain 20,000 to 80,000 bees.',
@@ -52,14 +60,20 @@ export const ANIMALS = [
       description: 'Ping ate some bad bamboo and has a terrible stomach ache! Help soothe his tummy.',
       symptoms: ['Holding tummy', 'Not eating', 'Low energy', 'Sad eyes'],
       correctTreatments: ['Herbal tea', 'Fresh bamboo shoots', 'Tummy medicine', 'Ginger root extract', 'Probiotic drops', 'Warm compress'],
-      wrongTreatments: ['Chocolate', 'Soda pop', 'Jumping jacks', 'Hot sauce', 'Bubble gum', 'Energy drink']
+      wrongTreatments: ['Chocolate', 'Soda pop', 'Jumping jacks', 'Hot sauce', 'Bubble gum', 'Energy drink'],
+      symptomTreatmentPairs: [
+        { symptom: 'Holding tummy', treatment: 'Warm compress' },
+        { symptom: 'Not eating', treatment: 'Fresh bamboo shoots' },
+        { symptom: 'Low energy', treatment: 'Ginger root extract' },
+        { symptom: 'Sad eyes', treatment: 'Herbal tea' },
+        { symptom: 'Bloated belly', treatment: 'Tummy medicine' },
+        { symptom: 'Gurgling stomach', treatment: 'Probiotic drops' }
+      ]
     },
-    minigameType: 'matchThree',
-    minigameConfig: {
-      gridSize: 6,
-      timeLimit: 90,
-      targetScore: 500,
-      tileTypes: 5
+    minigameConfigs: {
+      matchPairs: { pairs: 6, timeLimit: 55 },
+      matchThree: { gridSize: 6, timeLimit: 90, targetScore: 500, tileTypes: 5 },
+      dragDrop: { rounds: 5, timeLimit: 75, itemsPerRound: 4 }
     },
     journal: {
       habitat: 'Temperate broadleaf and mixed forests of central China, mainly in Sichuan, Shaanxi, and Gansu provinces. They live at elevations of 5,000 to 10,000 feet.',
@@ -87,13 +101,20 @@ export const ANIMALS = [
       description: 'Shelly got tangled in plastic waste and has cuts on her flippers! Carefully help free her.',
       symptoms: ['Tangled flippers', 'Small cuts', 'Trouble swimming', 'Exhaustion'],
       correctTreatments: ['Gentle bandages', 'Saltwater rinse', 'Seaweed wrap', 'Antiseptic cream', 'Rest in warm pool', 'Vitamin supplements'],
-      wrongTreatments: ['Super glue', 'Hair dryer', 'Rubber bands', 'Sandpaper', 'Perfume', 'Tape']
+      wrongTreatments: ['Super glue', 'Hair dryer', 'Rubber bands', 'Sandpaper', 'Perfume', 'Tape'],
+      symptomTreatmentPairs: [
+        { symptom: 'Tangled flippers', treatment: 'Gentle bandages' },
+        { symptom: 'Small cuts', treatment: 'Antiseptic cream' },
+        { symptom: 'Trouble swimming', treatment: 'Rest in warm pool' },
+        { symptom: 'Exhaustion', treatment: 'Vitamin supplements' },
+        { symptom: 'Irritated skin', treatment: 'Saltwater rinse' },
+        { symptom: 'Dehydrated shell', treatment: 'Seaweed wrap' }
+      ]
     },
-    minigameType: 'dragDrop',
-    minigameConfig: {
-      rounds: 5,
-      timeLimit: 75,
-      itemsPerRound: 4
+    minigameConfigs: {
+      matchPairs: { pairs: 7, timeLimit: 55 },
+      matchThree: { gridSize: 6, timeLimit: 80, targetScore: 550, tileTypes: 5 },
+      dragDrop: { rounds: 5, timeLimit: 75, itemsPerRound: 4 }
     },
     journal: {
       habitat: 'Tropical and subtropical oceans worldwide. They nest on beaches in over 80 countries and migrate thousands of miles between feeding grounds and nesting sites.',
@@ -121,12 +142,20 @@ export const ANIMALS = [
       description: 'Storm got caught in a blizzard and has a frostbitten paw! Help warm and heal it.',
       symptoms: ['Limping', 'Swollen paw', 'Shivering', 'Whimpering'],
       correctTreatments: ['Warm compress', 'Healing salve', 'Cozy bandage', 'Gentle massage', 'Warm milk', 'Anti-inflammatory drops', 'Soft paw pad', 'Warming blanket'],
-      wrongTreatments: ['Ice pack', 'Hot sauce', 'Running shoes', 'Hair gel', 'Cold water', 'Sandpaper', 'Chili powder', 'Frozen fish']
+      wrongTreatments: ['Ice pack', 'Hot sauce', 'Running shoes', 'Hair gel', 'Cold water', 'Sandpaper', 'Chili powder', 'Frozen fish'],
+      symptomTreatmentPairs: [
+        { symptom: 'Limping', treatment: 'Soft paw pad' },
+        { symptom: 'Swollen paw', treatment: 'Healing salve' },
+        { symptom: 'Shivering', treatment: 'Warming blanket' },
+        { symptom: 'Whimpering', treatment: 'Gentle massage' },
+        { symptom: 'Cracked pads', treatment: 'Warm compress' },
+        { symptom: 'Stiff joints', treatment: 'Anti-inflammatory drops' }
+      ]
     },
-    minigameType: 'matchPairs',
-    minigameConfig: {
-      pairs: 8,
-      timeLimit: 50
+    minigameConfigs: {
+      matchPairs: { pairs: 8, timeLimit: 50 },
+      matchThree: { gridSize: 7, timeLimit: 70, targetScore: 650, tileTypes: 5 },
+      dragDrop: { rounds: 5, timeLimit: 65, itemsPerRound: 4 }
     },
     journal: {
       habitat: 'High mountain ranges of Central Asia, including the Himalayas, Altai, and Hindu Kush, at elevations of 9,800 to 14,800 feet. They prefer steep, rugged terrain with rocky outcrops.',
@@ -154,14 +183,20 @@ export const ANIMALS = [
       description: "Axel's beautiful feathery gills are infected from polluted water! He needs urgent care.",
       symptoms: ['Pale gills', 'Slow movement', 'Floating sideways', 'Loss of appetite'],
       correctTreatments: ['Clean water filter', 'Gill medicine drops', 'Mineral bath', 'Algae supplement', 'Water conditioner', 'Probiotic powder', 'Oxygen bubbles', 'Herbal gill wash'],
-      wrongTreatments: ['Soap', 'Perfume', 'Hot water', 'Bleach', 'Vinegar', 'Hair spray', 'Glitter', 'Salt water']
+      wrongTreatments: ['Soap', 'Perfume', 'Hot water', 'Bleach', 'Vinegar', 'Hair spray', 'Glitter', 'Salt water'],
+      symptomTreatmentPairs: [
+        { symptom: 'Pale gills', treatment: 'Gill medicine drops' },
+        { symptom: 'Slow movement', treatment: 'Mineral bath' },
+        { symptom: 'Floating sideways', treatment: 'Water conditioner' },
+        { symptom: 'Loss of appetite', treatment: 'Algae supplement' },
+        { symptom: 'Cloudy water', treatment: 'Clean water filter' },
+        { symptom: 'Low oxygen levels', treatment: 'Oxygen bubbles' }
+      ]
     },
-    minigameType: 'matchThree',
-    minigameConfig: {
-      gridSize: 7,
-      timeLimit: 60,
-      targetScore: 800,
-      tileTypes: 6
+    minigameConfigs: {
+      matchPairs: { pairs: 8, timeLimit: 45 },
+      matchThree: { gridSize: 7, timeLimit: 60, targetScore: 800, tileTypes: 6 },
+      dragDrop: { rounds: 6, timeLimit: 60, itemsPerRound: 4 }
     },
     journal: {
       habitat: 'Lake Xochimilco in the Valley of Mexico. Once found throughout multiple lakes near Mexico City, they are now restricted to a small network of canals and wetlands.',
