@@ -34,7 +34,11 @@ export const ANIMALS = [
       matchThree: { gridSize: 6, timeLimit: 90, targetScore: 400, tileTypes: 5 },
       dragDrop: { rounds: 4, timeLimit: 75, itemsPerRound: 4 },
       germZapper: { gridSize: 4, timeLimit: 60, targetZaps: 15, spawnInterval: 1400, germLifetime: 2200, maxGerms: 2 },
-      simonSays: { buttonCount: 4, timeLimit: 60, startLength: 2, maxRounds: 6 }
+      simonSays: { buttonCount: 4, timeLimit: 60, startLength: 2, maxRounds: 6 },
+      sliderPuzzle: { gridSize: 3, timeLimit: 90 },
+      wordScramble: { rounds: 4, timeLimit: 75 },
+      rhythmGame: { bpm: 70, timeLimit: 60, targetBeats: 15, hitWindow: 300 },
+      spotDifference: { differences: 4, rounds: 3, timeLimit: 70 }
     },
     journal: {
       habitat: 'Found on every continent except Antarctica. They live in hives in hollow trees, rock crevices, and man-made beehives. A single hive can contain 20,000 to 80,000 bees.',
@@ -77,7 +81,11 @@ export const ANIMALS = [
       matchThree: { gridSize: 6, timeLimit: 90, targetScore: 500, tileTypes: 5 },
       dragDrop: { rounds: 5, timeLimit: 75, itemsPerRound: 4 },
       germZapper: { gridSize: 4, timeLimit: 60, targetZaps: 18, spawnInterval: 1200, germLifetime: 2000, maxGerms: 3 },
-      simonSays: { buttonCount: 4, timeLimit: 65, startLength: 2, maxRounds: 7 }
+      simonSays: { buttonCount: 4, timeLimit: 65, startLength: 2, maxRounds: 7 },
+      sliderPuzzle: { gridSize: 3, timeLimit: 80 },
+      wordScramble: { rounds: 5, timeLimit: 75 },
+      rhythmGame: { bpm: 80, timeLimit: 60, targetBeats: 18, hitWindow: 270 },
+      spotDifference: { differences: 5, rounds: 3, timeLimit: 65 }
     },
     journal: {
       habitat: 'Temperate broadleaf and mixed forests of central China, mainly in Sichuan, Shaanxi, and Gansu provinces. They live at elevations of 5,000 to 10,000 feet.',
@@ -120,7 +128,11 @@ export const ANIMALS = [
       matchThree: { gridSize: 6, timeLimit: 80, targetScore: 550, tileTypes: 5 },
       dragDrop: { rounds: 5, timeLimit: 75, itemsPerRound: 4 },
       germZapper: { gridSize: 4, timeLimit: 55, targetZaps: 20, spawnInterval: 1100, germLifetime: 1800, maxGerms: 3 },
-      simonSays: { buttonCount: 5, timeLimit: 60, startLength: 2, maxRounds: 7 }
+      simonSays: { buttonCount: 5, timeLimit: 60, startLength: 2, maxRounds: 7 },
+      sliderPuzzle: { gridSize: 3, timeLimit: 70 },
+      wordScramble: { rounds: 5, timeLimit: 70 },
+      rhythmGame: { bpm: 90, timeLimit: 55, targetBeats: 20, hitWindow: 250 },
+      spotDifference: { differences: 5, rounds: 3, timeLimit: 60 }
     },
     journal: {
       habitat: 'Tropical and subtropical oceans worldwide. They nest on beaches in over 80 countries and migrate thousands of miles between feeding grounds and nesting sites.',
@@ -163,7 +175,11 @@ export const ANIMALS = [
       matchThree: { gridSize: 7, timeLimit: 70, targetScore: 650, tileTypes: 5 },
       dragDrop: { rounds: 5, timeLimit: 65, itemsPerRound: 4 },
       germZapper: { gridSize: 5, timeLimit: 50, targetZaps: 22, spawnInterval: 1000, germLifetime: 1600, maxGerms: 4 },
-      simonSays: { buttonCount: 5, timeLimit: 55, startLength: 3, maxRounds: 8 }
+      simonSays: { buttonCount: 5, timeLimit: 55, startLength: 3, maxRounds: 8 },
+      sliderPuzzle: { gridSize: 4, timeLimit: 90 },
+      wordScramble: { rounds: 5, timeLimit: 65 },
+      rhythmGame: { bpm: 100, timeLimit: 50, targetBeats: 22, hitWindow: 220 },
+      spotDifference: { differences: 6, rounds: 3, timeLimit: 55 }
     },
     journal: {
       habitat: 'High mountain ranges of Central Asia, including the Himalayas, Altai, and Hindu Kush, at elevations of 9,800 to 14,800 feet. They prefer steep, rugged terrain with rocky outcrops.',
@@ -206,7 +222,11 @@ export const ANIMALS = [
       matchThree: { gridSize: 7, timeLimit: 60, targetScore: 800, tileTypes: 6 },
       dragDrop: { rounds: 6, timeLimit: 60, itemsPerRound: 4 },
       germZapper: { gridSize: 5, timeLimit: 45, targetZaps: 25, spawnInterval: 900, germLifetime: 1400, maxGerms: 4 },
-      simonSays: { buttonCount: 6, timeLimit: 50, startLength: 3, maxRounds: 8 }
+      simonSays: { buttonCount: 6, timeLimit: 50, startLength: 3, maxRounds: 8 },
+      sliderPuzzle: { gridSize: 4, timeLimit: 75 },
+      wordScramble: { rounds: 6, timeLimit: 60 },
+      rhythmGame: { bpm: 110, timeLimit: 45, targetBeats: 25, hitWindow: 200 },
+      spotDifference: { differences: 7, rounds: 3, timeLimit: 50 }
     },
     journal: {
       habitat: 'Lake Xochimilco in the Valley of Mexico. Once found throughout multiple lakes near Mexico City, they are now restricted to a small network of canals and wetlands.',

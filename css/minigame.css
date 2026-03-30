@@ -391,6 +391,303 @@
   min-height: 1.4em;
 }
 
+/* Slider Puzzle */
+.slider-grid {
+  display: grid;
+  gap: 4px;
+  margin: 0 auto;
+  max-width: 360px;
+}
+
+.slider-tile {
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  background: var(--color-white);
+  border: 2px solid var(--color-bg-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+  user-select: none;
+  gap: 2px;
+}
+
+.slider-tile:hover {
+  transform: scale(1.03);
+  background: #f5f5f5;
+}
+
+.slider-empty {
+  background: var(--color-bg-dark);
+  border-color: transparent;
+  cursor: default;
+}
+
+.slider-empty:hover {
+  transform: none;
+  background: var(--color-bg-dark);
+}
+
+.slider-correct {
+  background: #e8f5e9;
+  border-color: var(--color-primary);
+}
+
+.slider-tile-num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+}
+
+/* Word Scramble */
+.scramble-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.scramble-answer {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.scramble-slot {
+  width: 32px;
+  height: 40px;
+  border-bottom: 3px solid var(--color-bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.scramble-space {
+  width: 16px;
+  border-bottom: none;
+}
+
+.scramble-filled {
+  border-color: var(--color-primary);
+}
+
+.scramble-correct {
+  background: #e8f5e9;
+  border-color: var(--color-primary);
+  border-radius: 4px;
+}
+
+.scramble-wrong {
+  background: #ffebee;
+  border-color: var(--color-danger);
+  animation: shake 0.3s;
+}
+
+.scramble-letters {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.scramble-letter {
+  width: 36px;
+  height: 40px;
+  background: var(--color-info);
+  color: var(--color-white);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.2s;
+  user-select: none;
+}
+
+.scramble-letter:hover {
+  transform: scale(1.1);
+}
+
+.scramble-letter.used {
+  opacity: 0.3;
+  pointer-events: none;
+  transform: scale(0.9);
+}
+
+/* Rhythm Game */
+.rhythm-heart {
+  text-align: center;
+  font-size: 3rem;
+  margin: 8px 0;
+  transition: transform 0.1s;
+}
+
+.rhythm-heart.rhythm-pulse {
+  transform: scale(1.2);
+}
+
+.rhythm-heart.rhythm-success {
+  transform: scale(1.4);
+  filter: brightness(1.3);
+}
+
+.rhythm-monitor {
+  position: relative;
+  height: 60px;
+  background: #1a1a2e;
+  border-radius: var(--radius);
+  margin: 0 auto 16px;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.rhythm-line {
+  position: absolute;
+  inset: 0;
+}
+
+.rhythm-tap-zone {
+  position: absolute;
+  left: 72%;
+  top: 0;
+  width: 6%;
+  height: 100%;
+  background: rgba(76, 175, 80, 0.3);
+  border-left: 2px solid var(--color-primary);
+  border-right: 2px solid var(--color-primary);
+  transition: background 0.15s;
+}
+
+.rhythm-tap-zone.rhythm-miss-flash {
+  background: rgba(244, 67, 54, 0.4);
+}
+
+.rhythm-marker {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: #f44336;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(244, 67, 54, 0.6);
+  transition: opacity 0.2s;
+}
+
+.rhythm-marker.rhythm-hit {
+  background: var(--color-primary);
+  box-shadow: 0 0 16px rgba(76, 175, 80, 0.8);
+  animation: zapPop 0.3s ease forwards;
+}
+
+.rhythm-marker.rhythm-missed {
+  opacity: 0;
+}
+
+.rhythm-tap-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100px;
+  margin: 0 auto;
+  padding: 16px;
+  background: linear-gradient(135deg, #e91e63, #f44336);
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  user-select: none;
+  transition: transform 0.1s;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.4);
+}
+
+.rhythm-tap-btn:active {
+  transform: scale(0.92);
+}
+
+/* Spot the Difference */
+.spot-panels {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.spot-panel {
+  flex: 1;
+  min-width: 160px;
+  max-width: 280px;
+}
+
+.spot-panel-label {
+  text-align: center;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.spot-area {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid var(--color-bg-dark);
+  cursor: crosshair;
+  transition: border-color 0.2s;
+}
+
+.spot-area.spot-miss {
+  border-color: var(--color-danger);
+}
+
+.spot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.spot-diff-marker {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  margin-left: -16px;
+  margin-top: -16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  background: rgba(244, 67, 54, 0.15);
+  border: 2px dashed rgba(244, 67, 54, 0.4);
+  transition: transform 0.2s, background 0.2s;
+  animation: spotPulse 1.5s ease infinite alternate;
+}
+
+.spot-diff-marker:hover {
+  transform: scale(1.2);
+}
+
+.spot-diff-marker.spot-found {
+  background: rgba(76, 175, 80, 0.3);
+  border: 2px solid var(--color-primary);
+  animation: none;
+  pointer-events: none;
+}
+
+@keyframes spotPulse {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+
 /* Game over overlay */
 .game-overlay {
   position: fixed;
@@ -443,5 +740,11 @@
   .zapper-germ { font-size: 1.6rem; }
   .simon-grid { max-width: 100%; gap: 8px; }
   .simon-btn { padding: 16px 8px; }
+  .slider-grid { max-width: 100%; }
+  .scramble-slot { width: 26px; height: 34px; font-size: 0.9rem; }
+  .scramble-letter { width: 30px; height: 34px; font-size: 0.9rem; }
+  .rhythm-monitor { max-width: 100%; }
+  .spot-panels { flex-direction: column; align-items: center; }
+  .spot-panel { max-width: 100%; }
   .game-header { flex-wrap: wrap; gap: 8px; }
 }

@@ -6,13 +6,21 @@ import { MatchThreeGame } from '../minigames/matchThree.js';
 import { DragDropGame } from '../minigames/dragDrop.js';
 import { GermZapperGame } from '../minigames/germZapper.js';
 import { SimonSaysGame } from '../minigames/simonSays.js';
+import { SliderPuzzleGame } from '../minigames/sliderPuzzle.js';
+import { WordScrambleGame } from '../minigames/wordScramble.js';
+import { RhythmGame } from '../minigames/rhythmGame.js';
+import { SpotDifferenceGame } from '../minigames/spotDifference.js';
 
 const GAME_CLASSES = {
   matchPairs: MatchPairsGame,
   matchThree: MatchThreeGame,
   dragDrop: DragDropGame,
   germZapper: GermZapperGame,
-  simonSays: SimonSaysGame
+  simonSays: SimonSaysGame,
+  sliderPuzzle: SliderPuzzleGame,
+  wordScramble: WordScrambleGame,
+  rhythmGame: RhythmGame,
+  spotDifference: SpotDifferenceGame
 };
 
 let activeGame = null;
